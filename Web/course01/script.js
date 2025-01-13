@@ -1,13 +1,13 @@
-console.log('Hi!')
+console.log('Hello!')
 
 const header = document.querySelector('h1')
 header.textContent = "22"
 
 let a = 1
-let b = 2
+let b = 4
 a = b + 2
 
-const c = 2
+const c = 5
     // c = a + 2
 
 let str = "hello"
@@ -28,8 +28,8 @@ const number = Number.parseInt(value)
 const isEvent = number % 2
 
 if (isEvent === 0) {
-    window.alert("even")
+    window.alert("This number is even")
 
 } else {
-    window.alert("odd")
+    window.alert("This number is odd")
 }
