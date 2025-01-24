@@ -62,16 +62,14 @@
         }
         
         .home-catalog {
-            display: flex;
-            float: right;
-            padding-right: 90px;
             padding-top: 15px;
-            justify-content: space-around;
+            width: 1200px;
             align-items: center;
             padding-bottom: 15px;
         }
         
         .home-catalog button {
+            float: right;
             background-color: white;
             width: 150px;
             height: 30px;
@@ -111,9 +109,9 @@
         
         .banner {
             position: relative;
-            margin: 30px auto;
             width: 1200px;
             height: 300px;
+            float: center;
             /* background-color: pink; */
             overflow: hidden;
             /* background-image: url(https://solanolibrary.com/wp-content/uploads/2020/09/DIX-Exterior-1-scaled.jpg);
@@ -207,23 +205,26 @@
         
         .middle-part {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             height: 450px;
-            width: 1000px;
-            margin: auto;
-            background-color: aliceblue;
+            width: 1200px;
+            margin-top: 40px;
+            /* background-color: red; */
         }
         
         .middle-time {
             width: 450px;
-            height: 400px;
+            height: 425px;
             position: relative;
             /* background-color: red; */
-            margin-top: 25px;
-            margin-left: 25px;
+            padding-top: 25px;
+            padding-left: 25px;
         }
         
         .middle-map {
-            width: 525px;
+            width: 450px;
             height: 450px;
             position: relative;
         }
@@ -260,9 +261,9 @@
         }
         
         .Copyright {
+            width: 1200px;
             margin-top: 50px;
             text-align: center;
-            margin-bottom: 20px;
         }
         
         .catalogue {
