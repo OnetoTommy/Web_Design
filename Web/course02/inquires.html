@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-inquires.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-title">
+            <div class="logo">
+                <img src="img/logo-primary.png" alt="">
+            </div>
+            <div class="header-content">
+                <!-- <span>Login in</span> -->
+                <button>Login in</button>
+                <select id="dropdown" name="options">
+        <option value="option1">Enlish</option>
+        <option value="option2">Spanish</option>
+        <option value="option3">Chinese</option>
+            </select>
+            </div>
+        </div>
+
+
+    </header>
+
+    <body>
+        <div class="form-container">
+            <h1>Inquiry Form</h1>
+            <form action="submit_inquiry.php" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter the subject of your inquiry" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+
+                <button type="submit">Submit Inquiry</button>
+            </form>
+        </div>
+    </body>
+    <footer>
+        <!-- <div class="header">
+          111
+      </div> -->
+        <div class="Copyright">
+            Copyright © 2025 - All Rights Reserved - Solano County Library
+        </div>
+    </footer>
+</body>
+
+</html>

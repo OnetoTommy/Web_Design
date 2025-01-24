@@ -6,43 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vallejo Public Library</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
     <header>
-        <div class="header-content">
-            <select id="dropdown" name="options">
+        <div class="header-title">
+            <div class="logo">
+                <img src="img/logo-primary.png" alt="">
+            </div>
+            <div class="header-content">
+                <!-- <span>Login in</span> -->
+                <button>Login in</button>
+                <select id="dropdown" name="options">
             <option value="option1">Enlish</option>
             <option value="option2">Spanish</option>
             <option value="option3">Chinese</option>
-          </select>
-            <span>Login in</span>
+                </select>
+            </div>
         </div>
-        <div class="logo">
-            <img src="img/logo-primary.png" alt="">
-        </div>
+
+
         <div class="home-catalog">
-            <span class="catalog-cata">Home</span>
-            <select class="cata" id="dropdown" name="options">
-              <option value="" disabled selected>Catalog</option>
-              <option value="option1">Book</option>
-              <option value="option2">Movie</option>
-              <option value="option3">Special Collections</option>
-            </select>
-            <select class="cata-loaning" id="dropdown" name="options">
-              <option value="" disabled selected>Loaning</option>
-              <option value="option1">Book</option>
-              <option value="option2">Movie</option>
-              <option value="option3">Special Collections</option>
-            </select>
-            <span class="cata-event">Event</span>
-            <select class="cata-service" id="dropdown" name="options">
-              <option value="" disabled selected>Services</option>
-              <option value="option1">Discover&Go</option>
-              <option value="option2">Volunteer</option>
-              <option value="option3">Career Online</option>
-            </select>
-            <span class="cata">Book a Room</span>
+            <button id="home">Home</button>
+            <button id="homecata">Catalog</button>
+            <button id="loanbook">Loaning</button>
+            <button id="news">Latest News</button>
+            <button id="inquires">General Inquiries</button>
+            <button id="card">Library Card</button>
 
         </div>
 
@@ -50,6 +41,9 @@
 
     <body>
         <div class="banner">
+            <span class="matter">Vallejo John F. Kennedy Library</span>
+            <br>
+            <span class="date">It is Thursday, January 23. We're open until 8:00 PM!</span>
             <ul>
                 <li>
                     <a href=""><img src="https://solanolibrary.com/wp-content/uploads/2020/09/DIX-Exterior-1-scaled.jpg" alt=""></a>
@@ -61,6 +55,7 @@
                     <a href=""><img src="img/Dixon-California-Milk-Farm-Sign2.jpg" alt=""></a>
                 </li>
             </ul>
+
             <a href="" class="prev"></a>
             <a href="" class="next"></a>
             <ol>
@@ -69,20 +64,65 @@
                 <li></li>
             </ol>
         </div>
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.765633839728!2d-121.82478092437702!3d38.44688207316111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80852577899ab629%3A0xff852ceb8ff94386!2sDixon%20Library!5e0!3m2!1sen!2sus!4v1737513840377!5m2!1sen!2sus"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+        <div class="middle-part">
+            <div class="middle-time">
+                <h2>Hours and Locations</h2>
+                <br>
+                <p>
+                    Dixon Library
+                    <br> 230 N. 1st Street
+                    <br> Dixon, CA 95620
+                    <br> 1-866-572-7587 (1-866-57-ASKUS)
+                </p>
+                <br>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>9:00 AM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>9:00 AM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>9:00 AM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>9:00 AM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday - Saturday</td>
+                            <td>9:00 AM - 5:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Closed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="middle-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.765633839728!2d-121.82478092437702!3d38.44688207316111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80852577899ab629%3A0xff852ceb8ff94386!2sDixon%20Library!5e0!3m2!1sen!2sus!4v1737513840377!5m2!1sen!2sus"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
+
     </body>
     <footer>
-        <div class="header">
+        <!-- <div class="header">
             111
-        </div>
+        </div> -->
         <div class="Copyright">
             Copyright © 2025 - All Rights Reserved - Solano County Library
         </div>
     </footer>
+
+    <script src="action.js">
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-librarycard.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-title">
+            <div class="logo">
+                <img src="img/logo-primary.png" alt="">
+            </div>
+            <div class="header-content">
+                <!-- <span>Login in</span> -->
+                <button>Login in</button>
+                <select id="dropdown" name="options">
+        <option value="option1">Enlish</option>
+        <option value="option2">Spanish</option>
+        <option value="option3">Chinese</option>
+            </select>
+            </div>
+        </div>
+
+    </header>
+
+    <body>
+        <div class="form-container">
+            <h1>Library Card Application</h1>
+            <form action="submit_library_card.php" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your full address" required></textarea>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="id_type">ID Type:</label>
+                <select id="id_type" name="id_type" required>
+                <option value="passport">Passport</option>
+                <option value="driver_license">Driver's License</option>
+                <option value="state_id">State ID</option>
+                <option value="other">Other</option>
+            </select>
+
+                <label for="id_number">ID Number:</label>
+                <input type="text" id="id_number" name="id_number" placeholder="Enter your ID number" required>
+
+                <button type="submit">Apply for Library Card</button>
+            </form>
+        </div>
+    </body>
+    <footer>
+        <!-- <div class="header">
+        111
+    </div> -->
+        <div class="Copyright">
+            Copyright © 2025 - All Rights Reserved - Solano County Library
+        </div>
+    </footer>
+</body>
+
+</html>
