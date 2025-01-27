@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 90%;
+}
+
+@media screen and (min-width: 1024px) {
+    .full-img {
+        margin: auto;
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .full-img {
+        margin: auto;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .full-img {
+        margin: auto;
+        width: 10%;
+    }
+}
+
+
+/*Chinese */
+
+header {
+    display: flex;
+    /* Enable Flexbox on the body */
+    justify-content: center;
+    padding-top: 2%;
+    /* Center horizontally */
+    /* align-items: center;
+    /* Center vertically */
+    /* Remove default margins */
+    background-color: white;
+    padding-bottom: 5%;
+    /* Optional background for clarity */
+}
+
+.img {
+    width: 1200px;
+    height: 40px;
+    background-color: antiquewhite;
+    display: flex;
+    /* Enable Flexbox */
+    flex-wrap: wrap;
+    /* Allow items to wrap onto the next line */
+    gap: 10px;
+    /* Space between items */
+    justify-content: center;
+    /* Align items horizontally */
+    align-items: center;
+    /* Align items vertically */
+}
+
+.img1 {
+    background-color: chartreuse;
+    width: 30%;
+    height: 90%;
+}
+
+
+/* @media screen and (min-width: 1024px) {
+        /* Space added after "and" */
+
+.img {
+    background-color: brown;
+    width: 80%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Space added after "and" */
+    .img {
+        background-color: aqua;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Space added after "and" */
+    .img {
+        background-color: blue;
+        width: 90%;
+    }
+}
