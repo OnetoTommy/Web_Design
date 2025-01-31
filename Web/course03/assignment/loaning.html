@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-loan.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-title">
+            <div class="logo">
+                <img src="img/logo-primary.png" alt="">
+            </div>
+            <!-- <div class="header-content">
+                    <button>Login in</button>
+                    <select id="dropdown" name="options">
+                <option value="option1">Enlish</option>
+                <option value="option2">Spanish</option>
+                <option value="option3">Chinese</option>
+                    </select>
+                </div> -->
+        </div>
+
+        <!-- <div class="home-catalog">
+            <button id="home">Home</button>
+            <button id="homecata">Catalog</button>
+            <button id="loanbook">Loaning</button>
+            <button>Latest News</button>
+            <button>General Inquiries</button>
+            <button>Library Card</button>
+
+        </div> -->
+
+    </header>
+
+    <body>
+        <div class="form-container">
+            <h1>Loaning</h1>
+            <form action="submit_book_loan.php" method="POST">
+                <label for="card_number">Library Card Number:</label>
+                <input type="text" id="card_number" name="card_number" placeholder="Enter your library card number" required>
+
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <label for="book_title">Book Title:</label>
+                <input type="text" id="book_title" name="book_title" placeholder="Enter the title of the book" required>
+
+                <label for="loan_date">Loan Date:</label>
+                <input type="date" id="loan_date" name="loan_date" required>
+
+                <label for="return_date">Return Date:</label>
+                <input type="date" id="return_date" name="return_date" required>
+
+                <button id="submit" type="submit">Submit Loan Request</button>
+            </form>
+        </div>
+    </body>
+    <footer>
+        <!-- <div class="header">
+            111
+        </div> -->
+        <div class="Copyright">
+            Copyright © 2025 - All Rights Reserved - Solano County Library
+        </div>
+    </footer>
+    <script>
+        document.getElementById("submit").addEventListener("click", clicksubmit);
+
+        function clicksubmit() {
+            window.location.href = "catalog.html";
+        }
+    </script>
+</body>
+
+</html>
