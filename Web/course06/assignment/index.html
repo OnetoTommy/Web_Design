@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body">
+    <header>
+        <div class="header-wrapper">
+            <div class="header-logo">
+                <a href="index.html"><img class="logo-img" src="img/logo-primary.png"></a>
+            </div>
+            <div class="header-nav">
+                <div class="nav-select">
+                    <select name="" id="" class="nav-dropdown">
+                  <option value="all">All</option>
+                  <option value="books">Books</option>
+                  <option value="electronics">Electronics</option>
+                  </select>
+                </div>
+                <div class="nav-btn">
+                    <form action="" class="nav-form">
+                        <input type="text" class="nav-input" placeholder="Search Books">
+                        <div class="nav-s">
+                            <svg><path fill-rule="evenodd" clip-rule="evenodd" d="M16.3451 15.2003C16.6377 15.4915 16.4752 15.772 16.1934 16.0632C16.15 16.1279 16.0958 16.1818 16.0525 16.2249C15.7707 16.473 15.4456 16.624 15.1854 16.3652L11.6848 12.8815C10.4709 13.8198 8.97529 14.3267 7.44714 14.3267C3.62134 14.3267 0.5 11.2314 0.5 7.41337C0.5 3.60616 3.6105 0.5 7.44714 0.5C11.2729 0.5 14.3943 3.59538 14.3943 7.41337C14.3943 8.98802 13.8524 10.5087 12.8661 11.7383L16.3451 15.2003ZM2.13647 7.4026C2.13647 10.3146 4.52083 12.6766 7.43624 12.6766C10.3517 12.6766 12.736 10.3146 12.736 7.4026C12.736 4.49058 10.3517 2.1286 7.43624 2.1286C4.50999 2.1286 2.13647 4.50136 2.13647 7.4026Z"
+                        fill="currentColor"></path></svg>
+                            <!-- <button class="search-button">🔍</button> -->
+                        </div>
+                    </form>
+                </div>
+
+                <!-- <button class="search-button">🔍</button> -->
+            </div>
+
+            <div class="header-login">
+                <div class="login-space">
+                    <a href="login.html"><img class="login-img" src="img/user-account_12192257.png"></a>
+                </div>
+
+                <div><span><a href="login.html">Login</a></span></div>
+
+            </div>
+        </div>
+
+        <div class="header-bar">
+            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+            <ul class="bar-ul" id="nav-menu">
+                <li class="bar-li">
+                    <a href="index.html" target="_blank">Home</a>
+                </li class="bar-li">
+                <li class="bar-li">
+                    <a href="catalog.html" target="_blank">Catalog</a>
+                </li>
+                <li class="bar-li">
+                    <a href="loaning.html" target="_blank">Loaning</a>
+                </li>
+                <li class="bar-li"><a href="news.html" target="_blank">Latest News</a></li>
+                <li class="bar-li"><a href="query.html" target="_blank">General Inquiries</a></li>
+                <li class="bar-li"><a href="librarycard.html" target="_blank">Library Card</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="section2">
+        <div class="body-all">
+            <div class="body-section1">
+                <div class="section1-news">
+                    <img src="img/image.png" class="p2">
+                </div>
+                <div class="section1-card">
+                    <div>
+                        <a href="librarycard.html"><Strong>Apply for library card?</Strong></a>
+
+                    </div>
+                    <br>
+                    <div><a href="librarycard.html">Need shopping help?</a></div>
+                </div>
+            </div>
+            <div class=" body-section2 ">
+                <div class="pic3">
+                    <img src="https://www.nypl.org/scout/_next/image?url=https%3A%2F%2Fdrupal.nypl.org%2Fsites-drupal%2Fdefault%2Ffiles%2Fstyles%2F2_1_960%2Fpublic%2F2023-06%2Fnew%2520arrivals%2520-%2520books%2520music%2520movies.jpeg%3Fh%3D16a6ccf5%26itok%3DDDe_PMR7&w=3840&q=90"
+                        alt="" class="p3">
+                    <div class="text">Best Books of the Year</div>
+                </div>
+                <div class="pic3"><img src="https://www.nypl.org/scout/_next/image?url=https%3A%2F%2Fdrupal.nypl.org%2Fsites-drupal%2Fdefault%2Ffiles%2Fstyles%2F2_1_960%2Fpublic%2F2024-05%2FSummer%25202024_Book%2520Collages_1000x500_All_1.png%3Fh%3D5dabf909%26itok%3DUdugK1xY&w=3840&q=90"
+                        alt="" class="p3">
+                    <div class="text">Specialized Book Lists</div>
+                </div>
+                <div class="pic3"><img src="https://www.nypl.org/scout/_next/image?url=https%3A%2F%2Fdrupal.nypl.org%2Fsites-drupal%2Fdefault%2Ffiles%2Fstyles%2F2_1_960%2Fpublic%2F2023-06%2Fnypl%2520blog%2520-%2520books%2520music%2520movies.jpg%3Fh%3D8869a3dd%26itok%3DtO4QEKbn&w=3840&q=90"
+                        alt="" class="p3">
+                    <div class="text">Shelf Help</div>
+                </div>
+                <div class="pic3"><img src="https://www.nypl.org/scout/_next/image?url=https%3A%2F%2Fdrupal.nypl.org%2Fsites-drupal%2Fdefault%2Ffiles%2Fstyles%2F2_1_960%2Fpublic%2F2023-06%2Fbest%2520books%2520-%2520books%2520music%2520movies%2520.png%3Fh%3D355d1f8c%26itok%3DpnGY-5ZN&w=3840&q=90"
+                        alt="" class="p3">
+                    <div class="text">New Arrivals</div>
+                </div>
+                <div class="pic3"><img src="https://www.nypl.org/scout/_next/image?url=https%3A%2F%2Fdrupal.nypl.org%2Fsites-drupal%2Fdefault%2Ffiles%2Fstyles%2F2_1_960%2Fpublic%2F2023-06%2Fspecial%2520book%2520lists%2520-%2520books%2520music%2520movies.png%3Fh%3D8869a3dd%26itok%3DbSfTD8qm&w=3840&q=90"
+                        alt="" class="p3">
+                    <div class="text">Staff Picks</div>
+                </div>
+                <div class="pic3"><img src="https://www.nypl.org/scout/_next/image?url=https%3A%2F%2Fdrupal.nypl.org%2Fsites-drupal%2Fdefault%2Ffiles%2Fstyles%2F2_1_960%2Fpublic%2F2023-06%2Fshelf%2520help%2520-%2520books%2520music%2520movies.jpg%3Fh%3D8869a3dd%26itok%3D1_aNgCP7&w=3840&q=90"
+                        alt="" class="p3">
+                    <div class="text">Read-Alikes & More</div>
+                </div>
+            </div>
+            <div class="body-section3 ">
+                <div class="s3-1">
+                    <p>
+                        <h3>Dixon Library</h3>
+                        <h3>230 N. 1st Street</h3>
+                        <br> Dixon, CA 95620
+                        <br> 1-866-572-7587 (1-866-57-ASKUS)
+                    </p>
+                    <br>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td>9:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td>9:00 AM - 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>9:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td>9:00 AM - 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Friday - Saturday</td>
+                                <td>9:00 AM - 5:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>Closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="s3-2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.765633839728!2d-121.82478092437702!3d38.44688207316111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80852577899ab629%3A0xff852ceb8ff94386!2sDixon%20Library!5e0!3m2!1sen!2sus!4v1737513840377!5m2!1sen!2sus"
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map">
+                        </iframe></div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <div class="foot">Copyright © 2025 - All Rights Reserved - Solano County Library</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
