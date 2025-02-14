@@ -154,16 +154,16 @@ a:hover {
 }
 
 .bar-ul {
-    position: fixed;
-    left: -250px;
+    left: 0;
     top: 0;
-    width: 250px;
-    height: 100%;
-    background: rgba(180, 31, 132, 0.9);
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-direction: column;
-    padding-top: 50px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
     transition: left 0.3s ease-in-out;
+    font-size: clamp(11px, 1.2vw, 20px);
 }
 
 .bar-ul.active {
@@ -171,54 +171,78 @@ a:hover {
 }
 
 .bar-li {
-    padding: 15px;
+    /* padding: 5px; */
     text-align: left;
 }
 
 .menu-toggle {
     display: none;
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    background: rgba(180, 31, 132, 0.9);
-    color: white;
-    font-size: 18px;
+    /* Hide by default on larger screens */
     border: none;
-    padding: 10px 15px;
+    font-size: 14px;
     cursor: pointer;
+    color: #ffffff;
+    /* Set a dark color for visibility */
+    background: none;
+    /* Remove background */
+    padding: 10px 15px;
     border-radius: 5px;
-    z-index: 101;
+    position: absolute;
+    left: 10px;
+    /* Align to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.3s ease-in-out;
+    /* Smooth color transition */
+    z-index: 200;
+    /* Ensure it's always clickable */
+}
+
+.bar-ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
 }
 
 @media (max-width: 430px) {
     .menu-toggle {
         display: block;
+        /* Show on mobile */
     }
 }
 
 @media (max-width: 430px) {
     .bar-ul {
-        display: none;
+        position: fixed;
+        left: -250px;
+        /* Initially hidden */
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
         flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-        padding: 10px 0;
-        overflow: hidden;
+        justify-content: center;
+        padding-top: 50px;
+        transition: left 0.3s ease-in-out;
     }
     .bar-ul.active {
-        display: flex;
+        left: 0;
+        /* Show menu */
     }
     .bar-li {
         text-align: center;
-        padding: 10px;
+        padding: 15px;
     }
-    .menu-toggle {
+    .bar-li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
         display: block;
-        margin: 10px auto;
+    }
+    .bar-li a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
     }
 }
 
@@ -240,7 +264,7 @@ a:hover {
     color: white;
     /* White text */
     font-size: clamp(14px, 1.5vw, 24px);
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 8px 15px;
     transition: 0.3s ease-in-out;
 }
