@@ -1,0 +1,14 @@
+#acc {
+    min-width: 100vw;
+    min-height: 100vw;
+}
+
+#item1 {
+    position: relative;
+    background-color: red;
+}
+
+#item2 {
+    position: absolute;
+    background-color: aquamarine;
+}
