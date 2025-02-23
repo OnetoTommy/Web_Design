@@ -140,8 +140,16 @@
 // setTimeout(function() {
 //     alert("js");
 // }, 3000)
+// var a = confirm("aaaaaaa")
 
-//location
-alert(location.href)
+// //location
+// alert(location.href)
 
-location.href = "https://www.google.com"
+// location.href = "https://www.google.com"
+
+// const first = '100';
+// const second = 2;
+// const result = first + second;
+// console.log(result);
+const a = window.prompt('Please input the number')
+window.alert(`Salutations, ${a}!${a}`)
