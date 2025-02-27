@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <img id="h1" src="img/off.gif"> <br><br>
+
+        <div class="cls">传智教育</div> <br>
+        <div class="cls">黑马程序员</div> <br>
+
+        <input type="checkbox" name="hobby"> 电影
+        <input type="checkbox" name="hobby"> 旅游
+        <input type="checkbox" name="hobby"> 游戏
+
+    </body>
+    <script>
+        //p1
+        var imgs = document.getElementById('h1')
+        imgs.src = 'img/on.gif';
+
+        // p2
+        var divs = document.getElementsByTagName('div')
+        for (i = 0; i < divs.length; i++) {
+            const div = divs[i];
+            div.innerHTML += "<font color='red'>ALL</font>"
+        }
+        //p3
+        var ins = document.getElementsByName("hobby")
+        for (i = 0; i < ins.length; i++) {
+            const check_box = ins[i];
+            check_box.checked = true;
+
+        }
+    </script>
+</body>
+
+</html>

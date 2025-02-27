@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="light" src="img/off.gif"> <br>
+
+    <input type="button" value="点亮" onclick="on()">
+    <input type="button" value="熄灭" onclick="off()">
+
+    <br><br>
+
+    <input type="text" id="name" value="ITCAST" onfocus="lower()" onblur="upper()">
+    <br><br>
+
+    <input type="checkbox" name="hobby"> 电影
+    <input type="checkbox" name="hobby"> 旅游
+    <input type="checkbox" name="hobby"> 游戏
+    <br>
+
+    <input type="button" value="全选" id="check_t">
+    <input type="button" value="反选" id="check_f">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            var check_t = document.getElementById("check_t")
+            var check_f = document.getElementById("check_f")
+            var boxes = document.getElementsByName("hobby")
+
+            check_t.addEventListener("click", () => {
+                for (i = 0; i < boxes.length; i++) {
+                    const box = boxes[i];
+                    box.checked = true;
+                }
+
+            })
+            check_f.addEventListener("click", () => {
+                for (i = 0; i < boxes.length; i++) {
+                    const box = boxes[i];
+                    box.checked = false;
+                }
+            })
+
+        })
+
+        function on() {
+            var imgs = document.getElementById("light")
+            imgs.src = "img/on.gif"
+        }
+
+        function off() {
+            var imgs = document.getElementById("light")
+            imgs.src = "img/off.gif"
+        }
+
+        function lower() {
+            var ob = document.getElementById("name")
+            ob.value = ob.value.toLowerCase();
+        }
+
+        function upper() {
+            var ob = document.getElementById("name")
+            ob.value = ob.value.toUpperCase();
+        }
+    </script>
+</body>
+
+</html>

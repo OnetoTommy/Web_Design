@@ -8,6 +8,73 @@
 </head>
 
 <body>
+
+    <body>
+        <div style="font-size: 30px; text-align: center;" id="tbl1">课程表</div>
+
+        <table width="800px" border="1" cellspacing="0" align="center">
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>分数</th>
+                <th>评语</th>
+            </tr>
+            <tr align="center" class="data">
+                <td>001</td>
+                <td>张三</td>
+                <td>90</td>
+                <td>很优秀</td>
+            </tr>
+            <tr align="center" class="data">
+                <td>002</td>
+                <td>李四</td>
+                <td>92</td>
+                <td>优秀</td>
+            </tr>
+            <tr align="center" class="data">
+                <td>003</td>
+                <td>王五</td>
+                <td>83</td>
+                <td>很努力, 不错</td>
+            </tr>
+            <tr align="center" class="data">
+                <td>004</td>
+                <td>赵六</td>
+                <td>98</td>
+                <td>666</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <div style="text-align: center;">
+            <input id="b1" type="button" value="改变标题内容" onclick="fn1()">
+            <input id="b2" type="button" value="改变标题颜色" onclick="fn2()">
+            <input id="b3" type="button" value="删除最后一个" onclick="fn3()">
+        </div>
+
+        <script>
+            // Change the table title content
+            function fn1() {
+                document.getElementById("tbl1").innerText = "新的课程表标题";
+            }
+
+            // Change the table title color
+            function fn2() {
+                document.getElementById("tbl1").style.color = "red";
+            }
+
+            // Delete the last row of the table
+            function fn3() {
+                const table = document.querySelector("table");
+                const rows = table.querySelectorAll("tr");
+                if (rows.length > 1) {
+                    table.deleteRow(rows.length - 1); // Remove the last row
+                }
+            }
+        </script>
+    </body>
+
     <script src="script.js"></script>
 </body>
 
