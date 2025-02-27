@@ -1,0 +1,178 @@
+            /* /* ul {
+    li {
+        transition: opacity 0.2s, transform 0.2s;
+        &.removing {
+            opacity: 0;
+            transform: translate(0, 50%);
+        }
+    }
+} */
+            /* ul {
+                    display: flex;
+                    list-style: none;
+                    padding: 0;
+                    margin: 20px 0;
+                }
+                
+                ul li {
+                    margin-right: 15px;
+                    padding: 20px;
+                    background-color: #ee5b5b;
+                    border-radius: 5px;
+                } */
+            /* Section_1 */
+            /* ul {
+                    li {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                        transition: opacity 0.2s, transform 0.2s;
+                        @starting-style {
+                            opacity: 0;
+                            transform: translate(0, -50%);
+                        }
+                        &.removing {
+                            opacity: 0;
+                            transform: translate(0, 50%);
+                        }
+                    }
+                } */
+            /* Section_2 */
+            /* ul {
+                    li {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                        transition: opacity 0.2s, transform 0.2s;
+                        @starting-style {
+                            opacity: 0;
+                            transform: translate(0, -50%);
+                        }
+                        &.hidden {
+                            display: none;
+                            opacity: 0;
+                            transform: translate(0, 50%);
+                        }
+                    }
+                } */
+            
+            @layer reset,
+            presentationstyles,
+            demo;
+            @layer demo {
+                ul {
+                    li {
+                        display: block;
+                        opacity: 1;
+                        transform: translate(0, 0);
+                        transition-property: opacity, transform, display;
+                        transition-duration: 0.2s;
+                        transition-behavior: allow-discrete;
+                        @starting-style {
+                            opacity: 0;
+                            transform: translate(0, -50%);
+                        }
+                        &.hidden {
+                            display: none;
+                            opacity: 0;
+                            transform: translate(0, 50%);
+                        }
+                    }
+                }
+            }
+            
+            @layer presentationstyles {
+                .buttons {
+                    display: flex;
+                    justify-content: space-around;
+                    justify-content: center;
+                    gap: 1.5rem;
+                    padding-block: 2rem;
+                    @media (width < 400px) {
+                        flex-direction: column;
+                    }
+                }
+                button {
+                    all: unset;
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    gap: 0.5rem;
+                    align-items: center;
+                    padding: 10px 15px;
+                    font-family: "Lato", sans-serif;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    line-height: 1.5;
+                    color: #fefefe;
+                    background: linear-gradient( 360deg in oklab, oklch(80% 0.4 222) 0%, oklch(35% 0.5 313) 100%);
+                    border-radius: 30px;
+                    cursor: pointer;
+                    transition: box-shadow 0.3s ease-out;
+                    &:is(:hover, : focus) {
+                        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                    }
+                    &:is(:active) {
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+                    }
+                }
+                .btn-remove {
+                    background: linear-gradient( 180deg in oklab, oklch(55% 0.45 350) 0%, oklch(36% 0.5 17) 100%);
+                }
+                ul {
+                    display: grid;
+                    gap: 3vmax;
+                    grid-template-columns: repeat(auto-fill, minmax(min(20ch, 100%), 1fr));
+                }
+                li {
+                    display: flex;
+                    justify-content: center;
+                    aspect-ratio: 1;
+                    border-radius: 30% 70% 70% 30% / 30% 63% 37% 70%;
+                    background: linear-gradient( 31deg in oklab, oklch(70% 0.5 240) 0%, oklch(90% 0.5 100) 100%);
+                    &:nth-child(4n + 2) {
+                        background: linear-gradient( 31deg in oklab, oklch(70% 0.5 40) 0%, oklch(90% 0.5 140) 100%);
+                        border-radius: 69% 31% 70% 30% / 30% 75% 25% 70%;
+                    }
+                    &:nth-child(4n + 3) {
+                        background: linear-gradient( 31deg in oklab, oklch(70% 0.5 240) 0%, oklch(90% 0.5 310) 100%);
+                        border-radius: 34% 66% 22% 78% / 30% 26% 74% 70%;
+                    }
+                    &:nth-child(4n + 4) {
+                        background: linear-gradient( 31deg in oklab, oklch(70% 0.5 20) 0%, oklch(90% 0.5 110) 100%);
+                        border-radius: 30% 70% 22% 78% / 79% 66% 34% 21%;
+                    }
+                    button {
+                        color: white;
+                        width: 2rem;
+                    }
+                }
+                .icon {
+                    width: 2rem;
+                    aspect-ratio: 1;
+                    display: inline-block;
+                }
+            }
+            
+            @layer reset {
+                *,
+                *::before,
+                *::after {
+                    box-sizing: border-box;
+                }
+                body {
+                    margin: 0;
+                    background: #111;
+                    padding: 1vmax;
+                    background-image: radial-gradient( circle at center center, rgba(33, 33, 33, 0), rgb(33, 33, 33)), repeating-linear-gradient( 135deg, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 1px, transparent 1px, transparent 4px), repeating-linear-gradient( 45deg, rgb(56, 56, 56) 0px, rgb(56, 56, 56) 5px, transparent 5px, transparent 6px), linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33));
+                    background-attachment: fixed;
+                }
+                .sr-only:not(:focus):not(:active) {
+                    clip: rect(0 0 0 0);
+                    clip-path: inset(50%);
+                    height: 1px;
+                    overflow: hidden;
+                    position: absolute;
+                    white-space: nowrap;
+                    width: 1px;
+                }
+            }
