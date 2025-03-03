@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+//Vue tools: v-bind; v-model; v-on; v-else/if; v-else;v-show; v-for
+
+
+<body>
+    <div id="app">
+        <input type="text" v-model="message"> {{message}}
+        <!-- //Two option can be used -->
+        <a v-bind:href="url">Link_List1</a>
+        <a :href="url">Link_List2</a>
+        <input type="text" v-model="url">
+        <input type="button" @click="handler()" value="Click">
+
+        <input type="text" v-model="age">
+        <div v-if="age <= 35">
+            <h1>Young</h1>
+        </div>
+        <div v-else-if="age>35 && age <= 60">
+            <h1>Middle</h1>
+        </div>
+        <div v-else>
+            <h1>Old</h1>
+        </div>
+
+        <!-- Show -->
+
+        <input type="text" v-model="age">
+        <div v-show="age <= 35">
+            <h1>Young</h1>
+        </div>
+        <div v-show="age>35 && age <= 60">
+            <h1>Middle</h1>
+        </div>
+        <div v-show="age>60">
+            <h1>Old</h1>
+        </div>
+        <hr>
+        <!-- v-for -->
+        <div v-for="(item, index) in items " :key="index " style="background-color: aquamarine;">
+            {{ index }} : {{ item }}
+        </div>
+    </div>
+
+
+
+    <script>
+        //Define the Vue
+        new Vue({
+            el: "#app ",
+            data: {
+                message: "Hello World ",
+                url: "https://www.google.com/maps ",
+                url_1: "https://www.google.com ",
+                age: 20,
+                items: ["Beijing ", "Oakland ", "Fremont ", "Austin "]
+            },
+            methods: {
+                handler: () => {
+                    alert("Clicking ")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
