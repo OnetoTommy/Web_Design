@@ -61,7 +61,10 @@ function handleclicker(){
     if (!/^\d{5}$/.test(zip_digits)) {
       zipError.innerText = "Zipcode must be exactly 5 digits.";
       isValid = false;
-      } else {
+    } else if(zip_digits === "00000"){
+      zipError.innerText = "No Exist";
+      isValid = false;
+    }else {
       zipError.innerText = ""; 
       is_Zip = true
     }
