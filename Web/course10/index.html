@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+
+  </header>
+  <main>
+    <div id="section_lang">
+      <select name="language" id="language">
+        <option value="">En</option>
+        <option value="">汉语</option>
+      </select>
+    </div>
+    <div id="section_form">
+      <form action="" method="get">
+        <p>
+          <label for="current">Amount:</label><input type="text" name="current" id="current">
+        </p>
+        <p>
+          <label for="c_current">Currency:</label>
+          <select name="" id="">
+            <option value="">USA</option>
+            <option value="">EU</option>
+            <option value="">RMB</option>
+          </select>
+        </p>
+      </form>
+      <form action="" method="get">
+        <p>
+          <label for="now">Amount:</label><input type="text" name="now" id="now" value="">
+        </p>
+        <p>
+          <label for="c_current">Currency:</label>
+          <select name="" id="">
+            <option value="">USA</option>
+            <option value="">EU</option>
+            <option value="">RMB</option>
+          </select>
+        </p>
+      </form>
+    </div>
+    <div id = "section_news">
+    <h2>USD/CNY</h2>
+    <div class="tradingview-widget-container">
+        <div id="tradingview_chart"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+            new TradingView.widget({
+                "container_id": "tradingview_chart",
+                "width": "100%",
+                "height": 400,
+                "symbol": "FX_IDC:USDCNY",
+                "interval": "D",  
+                "timezone": "Asia/Shanghai",
+                "theme": "light",
+                "style": "1",
+                "locale": "zh_CN",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "hide_side_toolbar": false,
+                "allow_symbol_change": true,
+                "studies": ["MA@tv-basicstudies"],  // 添加均线
+                "range": "1M",  // 近一个月的汇率走势
+            });
+        </script>
+    </div>
+  </div>
+  </main>
+  <footer>
+    <div id = "section_function">
+
+    </div>
+    <div id = "section_function">
+      Currency
+    </div>
+    <div id = "section_profile">
+      Profile
+    </div>
+  </footer>
+</body>
+</html>

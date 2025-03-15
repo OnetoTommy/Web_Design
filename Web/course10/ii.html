@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美元兑人民币汇率走势</title>
+</head>
+<body>
+    <h2>美元兑人民币（USD/CNY）近一个月汇率走势图</h2>
+    
+    <!-- TradingView 汇率曲线 -->
+    <div class="tradingview-widget-container">
+        <div id="tradingview_chart"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+            new TradingView.widget({
+                "container_id": "tradingview_chart",
+                "width": "100%",
+                "height": 400,
+                "symbol": "FX_IDC:USDCNY",
+                "interval": "D",  // 日K线，代表每天的数据
+                "timezone": "Asia/Shanghai",
+                "theme": "light",
+                "style": "1",
+                "locale": "zh_CN",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "hide_side_toolbar": false,
+                "allow_symbol_change": true,
+                "studies": ["MA@tv-basicstudies"],  // 添加均线
+                "range": "1M",  // 近一个月的汇率走势
+            });
+        </script>
+    </div>
+</body>
+</html>

@@ -4,6 +4,7 @@ function handleclicker(){
   let is_Name = true;
   let is_Zip = true;
   let is_Password = true;
+  let isValid = true;
   // Year of Birth
   // const cur_Year = new Date().getFullYear();
   // const date_Input = document.getElementById('birth');
@@ -77,7 +78,7 @@ function handleclicker(){
   const passwordError = get_Element("passwordError");
   if(password.length < 8){
     passwordError.innerHTML = "Password must be at least 8 characters."
-    is_Dates_Password = false;
+    is_Password = false;
   }
   if(is_Date & is_Name & is_Zip & is_Password){
     alert("Accecpted!")
