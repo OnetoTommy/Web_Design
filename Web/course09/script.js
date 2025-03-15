@@ -78,7 +78,7 @@ function handleclicker(){
   const passwordError = get_Element("passwordError");
   if(password.length < 8){
     passwordError.innerHTML = "Password must be at least 8 characters."
-    is_Dates_Password = false;
+    is_Password = false;
   }
   if(is_Date & is_Name & is_Zip & is_Password){
     alert("Accecpted!")
