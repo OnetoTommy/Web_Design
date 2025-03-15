@@ -4,6 +4,7 @@ function handleclicker(){
   let is_Name = true;
   let is_Zip = true;
   let is_Password = true;
+  let isValid = true;
   // Year of Birth
   // const cur_Year = new Date().getFullYear();
   // const date_Input = document.getElementById('birth');
