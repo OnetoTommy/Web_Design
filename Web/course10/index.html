@@ -6,15 +6,14 @@
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="init()">
   <header>
 
   </header>
   <main>
     <div id="section_lang">
       <select name="language" id="language">
-        <option value="">En</option>
-        <option value="">汉语</option>
+        
       </select>
     </div>
     <div id="section_form">
@@ -24,11 +23,9 @@
         </p>
         <p>
           <label for="c_current">Currency:</label>
-          <select name="" id="">
-            <option value="">USA</option>
-            <option value="">EU</option>
-            <option value="">RMB</option>
-          </select>
+          <select name="currency" class="currency-select">
+            <option value="">Loading...</option>
+        </select>
         </p>
       </form>
       <form action="" method="get">
@@ -36,12 +33,10 @@
           <label for="now">Amount:</label><input type="text" name="now" id="now" value="">
         </p>
         <p>
-          <label for="c_current">Currency:</label>
-          <select name="" id="">
-            <option value="">USA</option>
-            <option value="">EU</option>
-            <option value="">RMB</option>
-          </select>
+          <label for="c_current_1">Currency:</label>
+          <select name="currency" class="currency-select">
+            <option value="">Loading...</option>
+        </select>
         </p>
       </form>
     </div>
@@ -83,5 +78,6 @@
       Profile
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
