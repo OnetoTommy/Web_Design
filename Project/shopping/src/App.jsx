@@ -5,7 +5,7 @@ import './App.css';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "sk-lMvjvDGYTQp2wqhpNsqFiURGP3tV2MEJSoZNlORLp4PoiTCv";  // Don't expose API keys in the frontend.
+const API_KEY = "sk-lMvjvDGYTQp2wqhpNsqFiURGP3tV2MEJSoZNlORLp4PoiTCv";  
 
 function App() {
   const [messages, setMessages] = useState([
