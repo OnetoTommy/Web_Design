@@ -1,8 +1,11 @@
-// import Message from "./Message";
-import ListGroup from "./components/ListGroup";
+import SignUpIn from './sign_up_in';
 
-function App(){
-  return <div><ListGroup /></div>;
+function App() {
+  return (
+    <div>
+      <SignUpIn />
+    </div>
+  );
 }
 
 export default App;
