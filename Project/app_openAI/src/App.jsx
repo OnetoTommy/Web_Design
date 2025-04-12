@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import '@chatscope/chat-ui-kit-react/styles.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
+import Navbar from './component/Navbar';
 
 
 
