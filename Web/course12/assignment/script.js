@@ -1,160 +1,43 @@
-
-const bookData = {
-  id1: {
-    item1: {
-      name: 'The Great Adventure',
-      author: 'Alice Johnson',
-      editorial: 'Penguin Random House',
-      edition: '1st Edition',
-      number_of_pages: 200,
-      topics: 'Fantasy, Business'
-    }
-  },
-  id2: {
-    item2: {
-      name: 'Journey to the Unknown',
-      author: 'Bob Smith',
-      editorial: 'HarperCollins',
-      edition: '2nd Edition',
-      number_of_pages: 300,
-      topics: 'Adventure, Mystery'
-    }
-  },
-  id3: {
-    item3: {
-      name: 'Code Breakers',
-      author: 'Charlie Davis',
-      editorial: 'Macmillan',
-      edition: 'Revised Edition',
-      number_of_pages: 450,
-      topics: 'Technology, Programming'
-    }
-  },
-  id4: {
-    item4: {
-      name: 'The Silent Ocean',
-      author: 'David Harris',
-      editorial: 'Simon & Schuster',
-      edition: '1st Edition',
-      number_of_pages: 350,
-      topics: 'Non-fiction, Science'
-    }
-  },
-  id5: {
-    item5: {
-      name: 'Mastering Algorithms',
-      author: 'Eve Walker',
-      editorial: 'Wiley',
-      edition: '3rd Edition',
-      number_of_pages: 400,
-      topics: 'Science, Engineering'
-    }
-  },
-  id6: {
-    item6: {
-      name: 'The Last Empire',
-      author: 'Frank Green',
-      editorial: 'Oxford University Press',
-      edition: '2nd Edition',
-      number_of_pages: 520,
-      topics: 'History, Empire'
-    }
-  },
-  id7: {
-    item7: {
-      name: 'The Secret Lab',
-      author: 'Grace Adams',
-      editorial: 'Pearson',
-      edition: 'Special Edition',
-      number_of_pages: 240,
-      topics: 'Science Fiction, Mystery'
-    }
-  },
-  id8: {
-    item8: {
-      name: 'Algorithm Design',
-      author: 'Hank Nelson',
-      editorial: 'Prentice Hall',
-      edition: '4th Edition',
-      number_of_pages: 650,
-      topics: 'Computer Science, Algorithms'
-    }
-  },
-  id9: {
-    item9: {
-      name: 'Fictional Worlds',
-      author: 'Ivy Moore',
-      editorial: 'Cambridge University Press',
-      edition: 'Revised Edition',
-      number_of_pages: 300,
-      topics: 'Fantasy, Fiction'
-    }
-  },
-  id10: {
-    item10: {
-      name: 'Learning Python',
-      author: 'Jackie Lee',
-      editorial: 'O\'Reilly Media',
-      edition: '1st Edition',
-      number_of_pages: 550,
-      topics: 'Programming, Python'
-    }
-  }
-};
-
-
-function sendData(data) {
-  return fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Response from server:', data);
-      return bookData; 
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-}
-
-
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// ---------- INDEX PAGE ----------
+if (document.getElementById('book_list')) {
   const booksList = document.getElementById('book_list');
-  if (!booksList) return;
 
-  let books = JSON.parse(localStorage.getItem('books'));
-  if (!books || books.length === 0) {
-    books = Object.values(bookData).map(obj => Object.values(obj)[0]);
-    localStorage.setItem('books', JSON.stringify(books));
-  }
+  let books = JSON.parse(localStorage.getItem('books')) || [];
 
-  booksList.innerHTML = ''; 
+  booksList.innerHTML = '';
   books.forEach((book, index) => {
     const listItem = document.createElement('li');
+    listItem.style.marginBottom = '10px';
 
     const bookLink = document.createElement('a');
     bookLink.href = `book-details.html?id=${index}`;
     bookLink.textContent = book.name;
+    bookLink.style.fontWeight = 'bold';
+    bookLink.style.marginRight = '20px';
 
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
+    editBtn.style.backgroundColor = '#002855';
+    editBtn.style.color = 'white';
+    editBtn.style.marginRight = '10px';
     editBtn.onclick = () => {
       window.location.href = `edit-book.html?id=${index}`;
     };
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
-    deleteBtn.classList.add('delete');
-    deleteBtn.onclick = () => deleteBook(index);
+    deleteBtn.style.backgroundColor = '#C8102E';
+    deleteBtn.style.color = 'white';
+    deleteBtn.onclick = () => {
+      books.splice(index, 1);
+      localStorage.setItem('books', JSON.stringify(books));
+      location.reload();
+    };
 
     const actionDiv = document.createElement('div');
     actionDiv.className = 'actions';
@@ -165,42 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     listItem.appendChild(actionDiv);
     booksList.appendChild(listItem);
   });
-});
-
-
-function deleteBook(index) {
-  let books = JSON.parse(localStorage.getItem('books')) || [];
-  books.splice(index, 1);
-  localStorage.setItem('books', JSON.stringify(books));
-  location.reload(); 
 }
 
-
-if (document.getElementById('book-detail')) {
-  const bookId = getQueryParam('id');
-  sendData(bookData)
-    .then(data => {
-      const book = data[`id${bookId.slice(-1)}`]?.[`item${bookId.slice(-1)}`];
-      const bookDetailDiv = document.getElementById('book-detail');
-
-      if (book) {
-        bookDetailDiv.innerHTML = `
-          <h2>${book.name}</h2>
-          <p><strong>Author:</strong> ${book.author}</p>
-          <p><strong>Editorial:</strong> ${book.editorial}</p>
-          <p><strong>Edition:</strong> ${book.edition}</p>
-          <p><strong>Number of Pages:</strong> ${book.number_of_pages}</p>
-          <p><strong>Topics:</strong> ${book.topics}</p>
-        `;
-      } else {
-        bookDetailDiv.innerHTML = "<p>Book not found.</p>";
-      }
-    })
-    .catch(err => {
-      document.getElementById('book-detail').innerHTML = `<p>Error: ${err.message}</p>`;
-    });
-}
-
+// ---------- CREATE PAGE ----------
 if (document.getElementById('create-book-form')) {
   document.getElementById('create-book-form').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -226,18 +76,31 @@ if (document.getElementById('create-book-form')) {
       topics
     };
 
-    const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
+    // Save to localStorage
+    let existingBooks = JSON.parse(localStorage.getItem('books')) || [];
     existingBooks.push(newBook);
     localStorage.setItem('books', JSON.stringify(existingBooks));
 
-    window.location.href = "index.html";
+    // Optional: Send to mock API
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      body: JSON.stringify(newBook),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    }).then(res => res.json()).then(data => {
+      console.log("Mock API response:", data);
+    });
+
+    window.location.href = 'index.html';
   });
 }
 
-
+// ---------- EDIT PAGE ----------
 if (document.getElementById('edit-book-form')) {
   const id = getQueryParam('id');
-  const book = bookData[`id${id.slice(-1)}`]?.[`item${id.slice(-1)}`];
+  let books = JSON.parse(localStorage.getItem('books')) || [];
+  const book = books[id];
 
   if (book) {
     document.getElementById('name').value = book.name;
@@ -248,9 +111,41 @@ if (document.getElementById('edit-book-form')) {
     document.getElementById('topics').value = book.topics;
   }
 
-  document.getElementById('edit-book-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert(`Book with id ${id} updated! (mock)`);
+  document.getElementById('edit-book-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    books[id] = {
+      name: document.getElementById('name').value.trim(),
+      author: document.getElementById('author').value.trim(),
+      editorial: document.getElementById('editorial').value.trim(),
+      edition: document.getElementById('edition').value.trim(),
+      number_of_pages: parseInt(document.getElementById('number_of_pages').value.trim()),
+      topics: document.getElementById('topics').value.trim()
+    };
+
+    localStorage.setItem('books', JSON.stringify(books));
+    alert("Book updated!");
     window.location.href = 'index.html';
   });
+}
+
+// ---------- DETAIL PAGE ----------
+if (document.getElementById('book-detail')) {
+  const bookId = getQueryParam('id');
+  let books = JSON.parse(localStorage.getItem('books')) || [];
+  const book = books[bookId];
+  const bookDetailDiv = document.getElementById('book-detail');
+
+  if (book) {
+    bookDetailDiv.innerHTML = `
+      <h2>${book.name}</h2>
+      <p><strong>Author:</strong> ${book.author}</p>
+      <p><strong>Editorial:</strong> ${book.editorial}</p>
+      <p><strong>Edition:</strong> ${book.edition}</p>
+      <p><strong>Number of Pages:</strong> ${book.number_of_pages}</p>
+      <p><strong>Topics:</strong> ${book.topics}</p>
+    `;
+  } else {
+    bookDetailDiv.innerHTML = '<p>Book not found.</p>';
+  }
 }

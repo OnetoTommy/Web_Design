@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
+  <title>Edit Book</title>
 </head>
 <body>
-  <header>
-
-  </header>
   <main>
     <h2>Edit Book</h2>
     <form id="edit-book-form">
       <label for="name">Book Name</label>
-      <input type="text" id="name" />
-  
+      <input type="text" id="name" required />
+
       <label for="author">Author</label>
-      <input type="text" id="author" />
-  
+      <input type="text" id="author" required />
+
       <label for="editorial">Editorial</label>
-      <input type="text" id="editorial" />
-  
+      <input type="text" id="editorial" required />
+
       <label for="edition">Edition</label>
-      <input type="text" id="edition" />
-  
+      <input type="text" id="edition" required />
+
       <label for="number_of_pages">Number of Pages</label>
-      <input type="number" id="number_of_pages" />
-  
+      <input type="number" id="number_of_pages" required />
+
       <label for="topics">Topics</label>
-      <input type="text" id="topics" />
-  
+      <input type="text" id="topics" required />
+
       <button type="submit">Save</button>
     </form>
   </main>
-  
-  <footer>
-
-  </footer>
   <script src="script.js"></script>
 </body>
 </html>

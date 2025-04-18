@@ -1,12 +1,18 @@
 import React from "react";
+import { NavLink } from "react-router-dom"
+import { useSelector } from "react-redux";
+
 
 const Navbar = () => {
+  // const state = useSelector((state) => state.handleCart);
+  const cart = useSelector((state) => state.handleCart);
+  const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
 
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm">
         <div class="container">
-          <a class="navbar-brand fw-bold fs-4" href="#">
+          <a class="navbar-brand fw-bold fs-4" href="/Navbar">
             LA COLLECTION
           </a>
 
@@ -19,13 +25,13 @@ const Navbar = () => {
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
+                <a class="nav-link" href="/products">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="/contact">Contact</a>
               </li>
               {/* <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,9 +53,9 @@ const Navbar = () => {
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form> */}
             <div className="buttons">
-              <a href="" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i>Login</a>
-              <a href="" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i>Register</a>
-              <a href="" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i>Cart(0)</a>
+              <a href="/login" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i>Login</a>
+              <a href="/register" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i>Register</a>
+              <NavLink to="/cart" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i>Cart({totalItems})</NavLink>
             </div>
           </div>
         </div>
