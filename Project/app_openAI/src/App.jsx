@@ -8,7 +8,6 @@ import Navbar from './component/Navbar';
 
 
 
-
 function App() {
   const [messages, setMessages] = useState({
     messages: "Hello, I'm ChatGPT!",

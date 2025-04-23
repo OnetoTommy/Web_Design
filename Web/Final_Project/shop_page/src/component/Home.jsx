@@ -1,7 +1,6 @@
 import React from "react";
 import homeImg from './img/home.png';
 import Products from "./Products";
-//YEMIAN
 
 const Home = () => {
 
