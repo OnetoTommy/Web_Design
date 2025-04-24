@@ -92,8 +92,10 @@ import { AIProvider } from './context/AIContext';
 import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const basename = process.env.REACT_APP_BASENAME || "/";
 root.render(
-  <BrowserRouter basename="/shop_ai_deploy">
+  
+  <BrowserRouter basename={basename}>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <AIProvider>
