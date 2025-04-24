@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../style/signup.css";
+import "./AuthCommon.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -45,7 +45,7 @@ const Login = () => {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       />
       <div className="auth-wrapper">
-        <div className="sign-container">
+        <div className="container">
           <h1 className="form-title">Sign In</h1>
           <form onSubmit={handleLogin}>
             <div className="input-group">
@@ -76,7 +76,7 @@ const Login = () => {
               type="submit"
               name="signIn"
               id="signIn"
-              class="sign_btn"
+              class="btn"
               value="Sign In"
             />
           </form>
@@ -87,7 +87,7 @@ const Login = () => {
           </div>
           <div className="links">
             <p>Don't Have Account ?</p>
-            <a href="/register" >Sign Up</a>
+            <a href="/register">Sign Up</a>
           </div>
           {message && <div className="message-box">{message}</div>}
         </div>

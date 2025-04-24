@@ -11,6 +11,7 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
+  let componentMounted = true;
 
   useEffect(() => {
     let componentMounted = true;
@@ -53,18 +54,18 @@ const Products = () => {
       </>
     );
   };
-
+  
   const filterProduct = (cat) => {
     const updatedList = data.filter((x) => x.category === cat);
     setFilter(updatedList);
   };
-
+  
   const navigate = useNavigate();
   const { addProduct } = useAIContext();
   const handleAI = (product) => {
-    console.log("[AddProduct] Adding:", product);
-    addProduct(product);
-    toast.success(`“${product.title}” Add Successfully`);
+  console.log("[AddProduct] Adding:", product);
+  addProduct(product);
+  toast.success(`“${product.title}” Add Successfully`); 
   };
 
   const ShowProducts = () => {
@@ -91,38 +92,7 @@ const Products = () => {
         {filter.map((product) => {
           return (
             <>
-              <div className="col-md-3 d-flex">
-                <div className="card h-100 w-100 d-flex flex-column justify-content-between shadow-sm">
-                  <img
-                    src={product.image}
-                    className="card-img-top product-image"
-                    alt={product.title}
-                    style={{ height: "250px", objectFit: "contain" }}
-                  />
-                  <div className="card-body d-flex flex-column justify-content-between">
-                    <h5 className="card-title">{product.title}</h5>
-                    <p className="card-text fw-bold mb-2">${product.price}</p>
-                  </div>
-                  <div className="card-footer bg-white border-0">
-                    <div style={{ display: "flex", gap: "1.2rem" }}>
-                      <NavLink
-                        to={`/products/${product.id}`}
-                        className="btn btn-primary flex-fill w-50"
-                      >
-                        Buy Now
-                      </NavLink>
-                      <button
-                        className="btn btn-primary flex-fill w-50"
-                        onClick={() => handleAI(product)}
-                      >
-                        AI
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* <div className="col-md-3">
+              <div className="col-md-3">
                 <div className="card h-100 d-flex flex-column">
                   <img
                     src={product.image}
@@ -134,13 +104,13 @@ const Products = () => {
                     <p className="card-text">
                       ${product.price}
                     </p>
-                    <NavLink to={`/products/${product.id}`} className="btn btn-primary me-2">
+                    <NavLink to={`/products/${product.id}`} className="btn btn-primary">
                       Buy Now
                     </NavLink>
                     <button className="btn btn-primary me-2" onClick={() => handleAI(product)}>AI</button>
                   </div>
                 </div>
-              </div> */}
+              </div>
             </>
           )
         })}
@@ -153,7 +123,7 @@ const Products = () => {
 
   return (
     <div>
-      <div className="container my-5 py-2">
+      <div className="container my-5 py-5">
         <div className="row">
           <div className="col-12 mb-5">
             <h1 className='display-6 fw-bolder text-center'>Latest Products</h1>

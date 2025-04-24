@@ -1,7 +1,6 @@
 const cart = [];
 
 const handleCart = (state = cart, action) => {
-  console.log("Reducer called with action:", action);
   const product = action.payload;
 
   switch (action.type) {

@@ -4,9 +4,8 @@ import { useSelector } from 'react-redux';
 const Cart = () => {
   // Access the cart state from Redux store
   const cartItems = useSelector((state) => state.handleCart);
-  console.log("Redux cartItems from store:", cartItems);
   const totalItems = cartItems.reduce((sum, item) => sum + item.qty, 0); // calculate total quantity
-  
+
   return (
     <div className="container py-5">
       <h2>Shopping Cart</h2>

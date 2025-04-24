@@ -28,7 +28,7 @@ const Navbar = () => {
                 <a class="nav-link" href="/products">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/About">About</a>
+                <a class="nav-link" href="/about">About</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/AI">AI</a>
@@ -53,9 +53,9 @@ const Navbar = () => {
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form> */}
             <div className="buttons">
-              <a href="/login" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i>Login</a>
-              <a href="/register" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i>Register</a>
-              <a href="/cart" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i>Cart({totalItems})</a>
+              <NavLink to="/login" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i>Login</NavLink>
+              <NavLink to="/register" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i>Register</NavLink>
+              <NavLink to="/cart" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i>Cart({totalItems})</NavLink>
             </div>
           </div>
         </div>

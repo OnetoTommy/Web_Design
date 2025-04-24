@@ -15,7 +15,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
-    console.log("DISPATCHING product", product);
+    console.log("DISPATCH PRODUCT ID:", product.id);
     dispatch(addCart(product));
   };
 

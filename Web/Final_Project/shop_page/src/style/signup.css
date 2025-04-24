@@ -1,23 +1,5 @@
-
-
-/* Navbar */
-.navbar-nav a{
-  font-size: 18px;
-}
-
-/* Products */
-.product-image {
-  height: 250px; /* or whatever uniform height fits your design */
-  object-fit: contain; /* keeps image ratio while fitting inside */
-  padding: 10px; /* optional, for spacing inside the card */
-}
-
-
-
-/* AI section */
-
-/* General Styles */
-/* * {
+/* General Styles  */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -29,7 +11,7 @@ body {
   background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
 
-.container{
+.sign-container{
   background-color: #fff;
   width: 450px;
   padding: 1.5rem;
@@ -106,7 +88,7 @@ input:focus~label, input:not(:placeholder-shown)~label{
   text-decoration: underline;
 }
 
-.btn{
+.sign_btn{
   font-size: 1.1rem;
   padding: 8px 0;
   border-radius: 5px;
@@ -118,7 +100,7 @@ input:focus~label, input:not(:placeholder-shown)~label{
   cursor: pointer;
   transition:0.9s;
 }
-.btn:hover{
+.sign_btn:hover{
   background-color: #07001f;
 
 }
@@ -161,4 +143,4 @@ button{
 button:hover{
   text-decoration: underline;
   color: blue;
-} */
+}
