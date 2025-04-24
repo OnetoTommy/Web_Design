@@ -9,7 +9,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import { useOpenAI } from "./open_ai";
 import { useAIContext } from "../context/AIContext";
-import "../style/AI.css";
+import "./AI.css";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 
 function AI() {
@@ -48,8 +48,8 @@ function AI() {
   };
 
   return (
-    <div className="AI">
-      <div className = "AI-container">
+    <div className="App">
+      <div style={{ position: "relative", height: "800px", width: "700px" }}>
         <MainContainer>
           <ChatContainer>
             <MessageList>

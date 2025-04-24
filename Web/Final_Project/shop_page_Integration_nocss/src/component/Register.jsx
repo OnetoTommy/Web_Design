@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../style/signup.css";
+import "./AuthCommon.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({ fName: "", lName: "", email: "", password: "" });
@@ -39,7 +39,7 @@ const Register = () => {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       />
       <div className="auth-wrapper">
-        <div className="sign-container">
+        <div className="container">
           <h1 className="form-title">Register</h1>
           <form onSubmit={handleRegister}>
             <div className="input-group">
@@ -62,7 +62,7 @@ const Register = () => {
               <input type="password" name="password" placeholder="Password" required value={formData.password} onChange={handleChange} />
               <label for="password">Password</label>
             </div>
-            <input type="submit" name="signUp" id="signUp" class="sign_btn" value="Sign Up" />
+            <input type="submit" name="signUp" id="signUp" class="btn" value="Sign Up" />
           </form>
           <p className="or">----------or-----------</p>
           <div class="icons">
@@ -71,7 +71,7 @@ const Register = () => {
           </div>
           <div className="links">
             <p>Already Have Account ?</p>
-            <a href="/login" >Sign In</a>
+            <a href="/login">Sign In</a>
           </div>
           {message && <div className="message-box">{message}</div>}
         </div>
