@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom"
 import "../style/signup.css";
 
 const Register = () => {
@@ -16,7 +17,7 @@ const Register = () => {
     Object.entries(formData).forEach(([key, value]) => data.append(key, value));
 
     try {
-      const res = await fetch("http://localhost/shop_page/backend/register.php", {
+      const res = await fetch("register.php", {
         method: "POST",
         body: data,
       });
@@ -25,7 +26,7 @@ const Register = () => {
 
       if (result.status === "success") {
         setFormData({ fName: "", lName: "", email: "", password: "" });
-        window.location.href = "/login";
+        window.location.to = "/login";
       }
     } catch (error) {
       setMessage("Registration failed.");
@@ -71,7 +72,7 @@ const Register = () => {
           </div>
           <div className="links">
             <p>Already Have Account ?</p>
-            <a href="/login" >Sign In</a>
+            <NavLink className="nav-link" to="/login" >Sign In</NavLink>
           </div>
           {message && <div className="message-box">{message}</div>}
         </div>

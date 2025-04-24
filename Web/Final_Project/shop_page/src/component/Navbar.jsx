@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
 import { useSelector } from "react-redux";
+import "../style/navbar.css";
 
 
 const Navbar = () => {
@@ -12,9 +13,9 @@ const Navbar = () => {
     <div>
       <nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm">
         <div class="container">
-          <a class="navbar-brand fw-bold fs-4" href="/Navbar">
+          <NavLink className="nav-link" class="navbar-brand fw-bold fs-4" to="/Navbar">
             LA COLLECTION
-          </a>
+          </NavLink>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,30 +23,30 @@ const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <NavLink className="nav-link" class="nav-link active" aria-current="page" to="/">Home</NavLink>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/products">Products</a>
+                <NavLink className="nav-link" class="nav-link" to="/products">Products</NavLink>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/About">About</a>
+                <NavLink className="nav-link" class="nav-link" to="/About">About</NavLink>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/AI">AI</a>
+                <NavLink className="nav-link" class="nav-link" to="/AI">AI</NavLink>
               </li>
               {/* <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <NavLink class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
-                </a>
+                </NavLink>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><NavLink class="dropdown-item" to="#">Action</NavLink></li>
+                  <li><NavLink class="dropdown-item" to="#">Another action</NavLink></li>
                   <li><hr class="dropdown-divider"/></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><NavLink class="dropdown-item" to="#">Something else here</NavLink></li>
                 </ul>
               </li> */}
               {/* <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <NavLink class="nav-link disabled" aria-disabled="true">Disabled</NavLink>
               </li> */}
             </ul>
             {/* <form class="d-flex" role="search">
@@ -53,9 +54,9 @@ const Navbar = () => {
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form> */}
             <div className="buttons">
-              <a href="/login" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i>Login</a>
-              <a href="/register" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i>Register</a>
-              <a href="/cart" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i>Cart({totalItems})</a>
+              <NavLink to="/login" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i>Login</NavLink>
+              <NavLink to="/register" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i>Register</NavLink>
+              <NavLink to="/cart" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i>Cart({totalItems})</NavLink>
             </div>
           </div>
         </div>
