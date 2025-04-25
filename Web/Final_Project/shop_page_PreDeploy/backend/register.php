@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-header("Access-Control-Allow-Origin: http://localhost:3003"); // ✅ 改成你的 React 开发端口
+header("Access-Control-Allow-Origin: http://localhost:3003"); 
 header("Access-Control-Allow-Credentials: true");
 header("Content-Type: application/json");
 
