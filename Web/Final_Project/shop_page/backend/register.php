@@ -1,13 +1,34 @@
 <?php
+ob_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', 'php-error.log');
 
-header("Access-Control-Allow-Origin: http://localhost:3003"); // ✅ Important for Frontend site
-header("Access-Control-Allow-Credentials: true");
+// ===== CORS 设置 =====
+$allowed_origins = [
+    "https://bespoke-halva-fdb945.netlify.app",
+    "https://stirring-hummingbird-de4c7f.netlify.app",
+    "https://super-hotteok-14c488.netlify.app",
+    "http://localhost:3000"
+];
+
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($origin, $allowed_origins)) {
+    header("Access-Control-Allow-Origin: $origin");
+    header("Access-Control-Allow-Credentials: true");
+}
+
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Content-Type: application/json");
 
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit(0);
+}
+
+// ===== 主逻辑 =====
 include 'connect.php';
-ob_start();
 
 $response = ['status' => 'error', 'message' => 'Unknown error occurred.'];
 
@@ -22,56 +43,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!$firstName || !$lastName || !$email || !$password) {
             $response['message'] = "Missing required fields.";
-            echo json_encode($response);
-            exit();
-        }
-
-        // Check if email exists
-        $checkEmail = $conn->prepare("SELECT * FROM users WHERE email = :email");
-        $checkEmail->bindParam(':email', $email);
-        $checkEmail->execute();
-
-        if ($checkEmail->rowCount() > 0) {
-            $response['message'] = "Email already exists.";
         } else {
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            try {
+                $check = $conn->prepare("SELECT * FROM users WHERE email = :email");
+                $check->bindParam(':email', $email);
+                $check->execute();
 
-            $insertQuery = $conn->prepare("INSERT INTO users (firstName, lastName, email, password) VALUES (:firstName, :lastName, :email, :password)");
-            $insertQuery->bindParam(':firstName', $firstName);
-            $insertQuery->bindParam(':lastName', $lastName);
-            $insertQuery->bindParam(':email', $email);
-            $insertQuery->bindParam(':password', $hashedPassword);
+                if ($check->rowCount() > 0) {
+                    $response['message'] = "Email already exists.";
+                } else {
+                    $hashed = password_hash($password, PASSWORD_DEFAULT);
+                    $insert = $conn->prepare("INSERT INTO users (firstName, lastName, email, password) VALUES (:f, :l, :e, :p)");
+                    $insert->bindParam(':f', $firstName);
+                    $insert->bindParam(':l', $lastName);
+                    $insert->bindParam(':e', $email);
+                    $insert->bindParam(':p', $hashed);
 
-            if ($insertQuery->execute()) {
-                $response = ['status' => 'success', 'message' => 'User registered successfully.'];
-            } else {
-                $response['message'] = "Failed to register user.";
+                    if ($insert->execute()) {
+                        $response = ['status' => 'success', 'message' => 'User registered successfully'];
+                    } else {
+                        $response['message'] = "Failed to insert: " . $insert->errorInfo()[2];
+                    }
+                }
+            } catch (PDOException $e) {
+                $response['message'] = "PDO error: " . $e->getMessage();
             }
-        }
-    } elseif ($action === 'signIn') {
-        $email = $_POST['email'] ?? '';
-        $password = $_POST['password'] ?? '';
-
-        $sql = $conn->prepare("SELECT * FROM users WHERE email = :email");
-        $sql->bindParam(':email', $email);
-        $sql->execute();
-
-        if ($sql->rowCount() > 0) {
-            $user = $sql->fetch(PDO::FETCH_ASSOC);
-            if (password_verify($password, $user['password'])) {
-                session_start();
-                $_SESSION['email'] = $user['email'];
-                $response = ['status' => 'success', 'message' => 'Login successful.'];
-            } else {
-                $response['message'] = "Incorrect password.";
-            }
-        } else {
-            $response['message'] = "Email not found.";
         }
     }
 }
 
-ob_clean();
+ob_end_clean();
 echo json_encode($response);
 exit();
 ?>

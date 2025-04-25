@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom"
 import "../style/signup.css";
 
 const Login = () => {
@@ -20,7 +19,7 @@ const Login = () => {
 
     try {
       const res = await fetch(
-        "https://backend-1-7ie7.onrender.com/register.php",
+        "http://localhost/shop_page/backend/register.php",
         {
           method: "POST",
           body: data,
@@ -31,7 +30,7 @@ const Login = () => {
       setMessage(result.message);
 
       if (result.status === "success") {
-        // window.location.to = "http://localhost/shopping_ai/backend/homepage.php";
+        // window.location.href = "http://localhost/shopping_ai/backend/homepage.php";
         navigate("/");
       }
     } catch (error) {
@@ -88,7 +87,7 @@ const Login = () => {
           </div>
           <div className="links">
             <p>Don't Have Account ?</p>
-            <NavLink className="nav-link" to="/register">Sign Up</NavLink>
+            <a href="/register" >Sign Up</a>
           </div>
           {message && <div className="message-box">{message}</div>}
         </div>
